@@ -5,8 +5,6 @@ public class PlayerMovement : MonoBehaviour
 {    
     public float groundSpeed;
     [Range(0f, 1f)]
-    public float climbSpeed;
-    [Range(0f, 1f)]
     public float groundDecay;
     public bool grounded;
     public BoxCollider2D groundCheck;
@@ -42,3 +40,4 @@ public class PlayerMovement : MonoBehaviour
         grounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, groundMask).Length > 0;
     }
 }
+//Code modified from AdamCYounis's tutorial on 2D movement on Youtube
