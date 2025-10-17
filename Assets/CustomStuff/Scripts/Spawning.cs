@@ -1,16 +1,12 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spawning : MonoBehaviour
 {
+    public GameObject playerPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void spawnPlayer()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Instantiate(playerPrefab, new Vector3(46, 3, -1), Quaternion.identity);
     }
 }
