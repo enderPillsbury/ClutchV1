@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4194b260898fd6c4baf43945b9e61d9e, type: 3}
+  m_Name: Rough
+  m_EditorClassIdentifier: Assembly-CSharp::BiomePreset
+  tiles:
+  - {fileID: 1789818667, guid: 2cb0922d13bcfab43a62fe77f23ab602, type: 3}
+  - {fileID: -922702838, guid: 2cb0922d13bcfab43a62fe77f23ab602, type: 3}
+  - {fileID: -949017676, guid: 2cb0922d13bcfab43a62fe77f23ab602, type: 3}
+  - {fileID: 1359735137, guid: 2cb0922d13bcfab43a62fe77f23ab602, type: 3}
+  - {fileID: -75499204, guid: 2cb0922d13bcfab43a62fe77f23ab602, type: 3}
+  - {fileID: 1238970200, guid: 2cb0922d13bcfab43a62fe77f23ab602, type: 3}
+  - {fileID: 1366643079, guid: 2cb0922d13bcfab43a62fe77f23ab602, type: 3}
+  - {fileID: -2122511856, guid: 2cb0922d13bcfab43a62fe77f23ab602, type: 3}
+  - {fileID: -1331053956, guid: 2cb0922d13bcfab43a62fe77f23ab602, type: 3}
+  minHeight: 0.5
+  minMoisture: 0.5
+  minHeat: 0
