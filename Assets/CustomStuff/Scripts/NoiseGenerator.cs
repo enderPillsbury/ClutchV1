@@ -33,10 +33,11 @@ public class NoiseGenerator : MonoBehaviour
             }
         }
         return noiseMap;
-        
+
     }
-    
+
 }
+[System.Serializable]
 public class Wave
 {
     public float seed;
