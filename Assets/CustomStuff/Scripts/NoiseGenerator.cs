@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class NoiseGenerator : MonoBehaviour
@@ -15,15 +14,15 @@ public class NoiseGenerator : MonoBehaviour
             for (int y = 0; y < height; ++y)
             {
                 //Calculate the  sample positions
-                float samplePosX = (float)x * scale + offset.x;
-                float samplePosY = (float)y * scale + offset.y;
+                float samplePosX = x * scale + offset.x;
+                float samplePosY = y * scale + offset.y;
 
                 float normalization = 0.0f;
 
                 //Loop through each wave
                 foreach (Wave wave in waves)
                 {
-                    //Sample the perlin noise taking into consideration amplitude and frequency
+                    //Sample the Perlin noise taking into consideration amplitude and frequency
                     noiseMap[x, y] += wave.amplitude * Mathf.PerlinNoise(samplePosX * wave.frequency + wave.seed, samplePosY * wave.frequency + wave.seed);
                     normalization += wave.amplitude;
                 }
@@ -37,7 +36,7 @@ public class NoiseGenerator : MonoBehaviour
     }
 
 }
-[System.Serializable]
+[Serializable]
 public class Wave
 {
     public float seed;
@@ -45,3 +44,4 @@ public class Wave
     public float amplitude;
 
 }
+//Code taken from the Zenva 2D Procedural Generation tutorial

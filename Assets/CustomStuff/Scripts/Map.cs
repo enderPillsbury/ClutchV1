@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class Map : MonoBehaviour
@@ -40,26 +39,26 @@ public class Map : MonoBehaviour
             {
                 GameObject tile = Instantiate(tilePrefab, new Vector3(x, y, 0), Quaternion.identity);
                 tile.GetComponent<SpriteRenderer>().sprite = GetBiome(heightMap[x, y], moistureMap[x, y], heatMap[x, y]).GetTileSprite();
-            }
+            }   //Fills the size of the map with sprites representing the biomes
         }
     }
     void Start()
     {
-        GenerateMap();
+        GenerateMap();  //Temporary until UI functional
     }
     BiomePreset GetBiome(float height, float moisture, float heat)
     {
         BiomePreset biomeToReturn = null;
         List<BiomeTempData> biomeTemp = new List<BiomeTempData>();
-        foreach (BiomePreset biome in biomes)
+        foreach (BiomePreset biome in biomes)   //Adds all biomes of a given type into a list.
         {
             if (biome.MatchCondition(height, moisture, heat))
             {
                 biomeTemp.Add(new BiomeTempData(biome));
             }
-        }
+        }   
         float curVal = 0.0f;
-        foreach (BiomeTempData biome in biomeTemp)
+        foreach (BiomeTempData biome in biomeTemp)  //Finds the next biome with the lower amount of difference value from the current values
         {
             if (biomeToReturn == null)
             {
@@ -83,7 +82,7 @@ public class Map : MonoBehaviour
 
     }
 }
-public class BiomeTempData
+public class BiomeTempData  //Class to store the data from all the given biomes for easy access.
 {
     public BiomePreset biome;
     public BiomeTempData(BiomePreset preset)
@@ -95,3 +94,4 @@ public class BiomeTempData
         return (height - biome.minHeight) + (moisture - biome.minMoisture) + (heat - biome.minHeat);
     }
 }
+//Code taken from the Zenva Tutorial on 2D Procedural Generation

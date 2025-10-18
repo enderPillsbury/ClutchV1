@@ -1,13 +1,10 @@
 using System.Collections;
-using System.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerClimbing : MonoBehaviour
 {
-    public BoxCollider2D wallCheck; 
     public Rigidbody2D body;
-    public LayerMask wallMask;
     public bool climbable;
     public float climbSpeed;
 
@@ -16,17 +13,6 @@ public class PlayerClimbing : MonoBehaviour
     public float climbCost;
     public float chargeRate;
     private Coroutine recharge;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     void FixedUpdate()
     {
         float yInput = Input.GetAxis("Vertical");
@@ -65,4 +51,5 @@ public class PlayerClimbing : MonoBehaviour
         }
     }
 }
-//Movement altered from the PlayerMovement Script, Stamina code altered from youtube video "Stamina Bar in Unity Tutorial" by "Gatsby"
+//Movement altered from the PlayerMovement Script
+//Stamina code altered from youtube video "Stamina Bar in Unity Tutorial" by "Gatsby"
