@@ -24,7 +24,7 @@ public class Map : MonoBehaviour
     public Wave[] heatWaves;
     public float[,] heatMap;
 
-    void GenerateMap()
+    public void GenerateMap()
     {
         //Height Map
         heightMap = NoiseGenerator.Generate(width, height, scale, heightWaves, offset);
@@ -41,10 +41,6 @@ public class Map : MonoBehaviour
                 tile.GetComponent<SpriteRenderer>().sprite = GetBiome(heightMap[x, y], moistureMap[x, y], heatMap[x, y]).GetTileSprite();
             }   //Fills the size of the map with sprites representing the biomes
         }
-    }
-    void Start()
-    {
-        GenerateMap();  //Temporary until UI functional
     }
     BiomePreset GetBiome(float height, float moisture, float heat)
     {
